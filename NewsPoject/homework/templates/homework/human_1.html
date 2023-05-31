@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Человек {{ title }}
+{% endblock %}
+
+{% block _nav %}  {% endblock %}
+
+{% block sidebar %}
+    {% include 'inc/_sidebarhome.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card mb-3" style='background-color: #ebe4ab; width: 1100px'>
+    <div class="card-header {% cycle 'text-primary' 'text-success' 'text-danger' %}">
+        Базовый номер: {{ human_i.id }}
+    </div>
+    <div class="media" style="display: flex">
+         {% autoescape off %}
+        <div class="media-photo">
+            {% if human_i.photo %}
+            <img src="{{ human_i.photo.url }}" class="mr-3" width="350" alt="Photo">
+            {% else %}
+            <h6> Фото нет </h6>
+            {% endif %}
+        </div>
+        <div class="media-body">
+            <h5 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}">{{human_i.Name}}
+                {{human_i.Last_name}}</h5>
+            <p class="card-text">Возраст: {{human_i.age}} лет</p>
+            <p class="card-text ">
+                {% if human_i.biography %}
+            <h6> Биография: </h6>{{human_i.biography}}</p>
+            {% else %}
+            <h6> Биография: нет </h6>
+            {% endif %}
+            <!--                            Биография: {{i.biography|truncatewords:60|default_if_none:"nothing"}}</p>-->
+             {% endautoescape %}
+        </div>
+    </div>
+
+    <div class="card-footer text-body-secondary" style='background-color: #c8ecca'>
+        Профессия: <a href="{{human_i.profession.get_absolute_url }}"> {{human_i.profession.title}} </a>
+    </div>
+</div>
+
+{% endblock %}
+
+

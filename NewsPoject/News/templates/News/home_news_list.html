@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title|title }} :: {{ block.super }}
+{% endblock %}
+
+{% block _nav2 %} {% endblock %}
+
+{% block sidebar %}
+    {% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+
+    {% for i in news %}
+    <div class="card mb-3" style="width: 1300px">
+        {{ forloop.counter }}
+        <div class="card-header">
+            Категория: <a href="{{ i.category.get_absolute_url }}"> {{i.category.title}} </a>
+        </div>
+        <div class="media" style="display: flex">
+            <div class="media-photo">
+                {% if i.photo %}
+                <img src="{{ i.photo.url }}" class="mr-3" width="350" alt="Photo">
+                {% else %}
+                <h6> Фото нет </h6>
+                {% endif %}
+            </div>
+            <div class="media-body" style="margin-left: 40px;">
+                <h5 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}" style="margin-left: 340px;">{{i.title}}</h5>
+                {% autoescape off %}
+                <p class="card-text">{{i.content|truncatewords:120|linebreaks }}</p>
+                {% endautoescape %}
+                <a href="{{ i.get_absolute_url }}" class="btn btn-primary" style="margin-left: 370px;">Read more...</a>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="date" style="margin-left: 570px;">
+               {{ i.created_at|date:'Y-m-d H:i' }}
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+
+
+

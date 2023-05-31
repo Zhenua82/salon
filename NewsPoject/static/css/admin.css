@@ -1,0 +1,70 @@
+#header{
+    background: #7fffd4;
+}
+
+/*цвет неиспользованной ссылки (Главное - соблюдать последовательность!)*/
+#branding h1 a:link{
+    color: black;
+    font-size: 32pt
+}
+/*цвет использованной ссылки*/
+#branding h1 a:visited{
+    color: #a100e6;
+}
+/*цвет ссылки при наведении на нее*/
+#branding h1 a:hover{
+    color: beige;
+}
+/*цвет нажатой ссылки*/
+#branding h1 a:active{
+    color: red;
+}
+
+#user-tools, #header a:link{
+    color: #a100e6;
+    font-size: 16pt;
+    height: 20px
+}
+#logout-form button{
+    color: red;
+    font-size: 16pt;
+}
+
+#header a:visited{
+    color: black;
+}
+#header a:hover{
+    color: beige;
+}
+
+#content h1{
+    color: #cc4400;
+    font-size: 26pt;
+    width: 600px;
+    margin-left: 300px;
+    font-weight: 300;
+}
+
+#header .module h2, .module caption, .inline-group h2{
+    background: red;
+    color: black !important;
+    width: 1000px
+}
+
+#content-related{
+    background: red;
+    margin-right: -800px;
+}
+
+#content-related .actionlist li a:link{
+    color: beige;
+}
+#content-related .actionlist li a:hover{
+    color: black;
+}
+
+div.breadcrumbs{
+    background: red;
+    color: #ffff33;
+    font-size: 16pt
+}
