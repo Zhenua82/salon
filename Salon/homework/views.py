@@ -17,8 +17,8 @@ def home(request):
     context = {
         'human_2': human_2,
         'human': human,
-        'title': 'Список людей',
-        'title2': 'Список людей:',
+        'title': 'Наши мастера',
+        'title2': 'Наши мастера:',
         'page_obj': page_human
     }
     return render(request, 'homework/home.html', context=context)

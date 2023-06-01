@@ -15,7 +15,7 @@
 {% comment %}
 {% for i in human %}
 {% endcomment %}
-<div class="card mb-3" style='background-color: #ebe4ab; width: 1300px'>
+<div class="card mb-3" style='background-color: #ebe4ab; width: 700px; margin-left: 300px'>
     <h4> Порядковый номер: {{ forloop.counter }} </h4>
     <div class="card-header {% cycle 'text-primary' 'text-success' 'text-danger' %}">
         Базовый номер: {{ i.id }}
@@ -28,16 +28,16 @@
             <h6> Фото нет </h6>
             {% endif %}
         </div>
-        <div class="media-body">
+        <div class="media-body" style="margin-left: 20px">
             {% autoescape off %}
             <h5 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}">{{i.Name}}
                 {{i.Last_name}}</h5>
-            <p class="card-text">Возраст: {{i.age}} лет</p>
+            <p class="card-text">Телефон: {{i.age}} </p>
             <p class="card-text ">
                 {% if i.biography %}
-            <h6> Биография: </h6>{{i.biography|truncatewords:120}}</p>
+            <h6> Специализация: </h6>{{i.biography|truncatewords:120}}</p>
             {% else %}
-            <h6> Биография: нет </h6>
+            <h6> Специализация: нет </h6>
             {% endif %}
             <!--                            Биография: {{i.biography|truncatewords:60|default_if_none:"nothing"}}</p>-->
             {% endautoescape %}

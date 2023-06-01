@@ -6,8 +6,8 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from .models import Human, Profession
 
 class NewsAdminForm(forms.ModelForm):
-    biography = forms.CharField(label='Биография', widget=CKEditorUploadingWidget())
-    Last_name = forms.CharField(label='Фамилия', widget=CKEditorUploadingWidget())
+    biography = forms.CharField(label='Специализация', widget=CKEditorUploadingWidget())
+    Last_name = forms.CharField(label='Портфолио', widget=CKEditorUploadingWidget())
     class Meta:
         model = Human
         fields = '__all__'
@@ -29,8 +29,8 @@ class HumanAdmin(admin.ModelAdmin):
 
     get_photo_description = 'Миниатюра'
 class ProfessionAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title')
-    list_display_links = ('id', 'title')
+    list_display = ('id', 'title', 'price')
+    list_display_links = ('id', 'title', 'price')
     search_fields = ['title']
 
 

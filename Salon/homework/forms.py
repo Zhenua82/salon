@@ -14,16 +14,6 @@ class HumanForm(forms.ModelForm):
         if re.search(r'\d', Name):
             raise ValueError('Имя не должно содержать цифр')
         return Name
-    def clean_Last_name(self):
-        Last_name = self.cleaned_data['Last_name']
-        if re.match(r'\d', Last_name):
-            raise ValueError('Фамилия не должна содержать цифр')
-        return Last_name
-    def clean_age(self):
-        age = self.cleaned_data['age']
-        if age < 0:
-            raise ValueError('Возраст не может быть отрицательным')
-        return age
 
     captcha = CaptchaField()
 
@@ -38,7 +28,9 @@ class HumanForm(forms.ModelForm):
             'Last_name': forms.TextInput(attrs={
                 'class': 'form-control'
             }),
-            'age': forms.NumberInput(),
+            'age': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
             'biography': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 5

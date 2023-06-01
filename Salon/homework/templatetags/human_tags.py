@@ -10,7 +10,7 @@ def get_profession():
     return Profession.objects.annotate(cnt=Count('human'))
 
 @register.inclusion_tag('homework/list_profession.html')
-def show_professions(arg1='Перечень', arg2='профессий'):
+def show_professions(arg1='Перечень оказываемых', arg2='услуг:'):
     # professions = Profession.objects.all()
     # professions = Profession.objects.annotate(cnt=Count('human')).filter(cnt__gt=0)
     professions = cache.get('professions')
