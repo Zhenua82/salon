@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ profession.title }}
+{% endblock %}
+
+{% block _nav %}  {% endblock %}
+
+{% block sidebar %}
+    {% include 'inc/_sidebarhome.html' %}
+{% endblock %}
+
+{% block content %}
+{% for i in human %}
+<div class="card mb-3">
+    <h4> Порядковый номер: {{ forloop.counter }} </h4>
+    <div class="card-header {% cycle 'text-primary' 'text-success' 'text-danger' %}">
+        Базовый номер: {{ i.id }}
+    </div>
+    <div class="media" style="display: flex">
+        <div class="media-photo">
+            {% if i.photo %}
+            <img src="{{ i.photo.url }}" class="mr-3" width="350" alt="Photo">
+            {% else %}
+            <h6> Фото нет </h6>
+            {% endif %}
+        </div>
+        <div class="media-body">
+            <h5 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}">{{i.Name}}
+                {{i.Last_name}}</h5>
+            <p class="card-text">Возраст: {{i.age}} лет</p>
+            <p class="card-text ">
+                {% if i.biography %}
+            <h6> Биография: </h6>{{i.biography|truncatewords:60}}</p>
+            {% else %}
+            <h6> Биография: нет </h6>
+            {% endif %}
+            <!--                            Биография: {{i.biography|truncatewords:60|default_if_none:"nothing"}}</p>-->
+            <a href="{{i.get_absolute_url }}" class="btn btn-primary">Read more...</a>
+        </div>
+    </div>
+
+    <div class="card-footer text-body-secondary">
+        Профессия: <a href="{{i.profession.get_absolute_url }}"> {{i.profession}} </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

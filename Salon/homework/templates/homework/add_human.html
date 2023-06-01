@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Добавление человека
+{% endblock %}
+
+{% block _nav %} {% endblock %}
+
+{% block sidebar %}
+    {% include 'inc/_sidebarhome.html' %}
+{% endblock %}
+
+{% block content %}
+    <h1>Добавление человека</h1>
+    <form action="{% url 'Add_human' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Добавить</button>
+        {{ form.none_field.errors }}
+    </form>
+{% endblock %}
+
+
+
+
