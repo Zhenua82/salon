@@ -17,7 +17,7 @@ def home(request):
     context = {
         'human_2': human_2,
         'human': human,
-        'title': 'Наши мастера',
+        'title': 'Стрижки и маникюр',
         'title2': 'Наши мастера:',
         'page_obj': page_human
     }

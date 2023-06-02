@@ -3,7 +3,7 @@
 <div class="list-group">
     {{ arg1 }} {{ arg2 }}
     {% for prof in professions %}
-      <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action" style='background-color: #eed815'>{{ prof.title }}
+      <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action" style='background-color: #c8ecca'>{{ prof.title }}
           <span class="badge bg-primary rounded-pill" style="width:30px; color:white;">{{ prof.cnt }}</span></a>
     {% endfor %}
 </div>
@@ -15,7 +15,7 @@
 <div class="media" style="display: flex;">
     <div class="media-list-group">
         <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action"
-           style='background-color: #eed815'>{{ prof.title }}
+           style='background-color: #c8ecca'>{{ prof.title }}
             <span class="badge bg-primary rounded-pill" style="width:30px; color:white;">{{ prof.cnt }}</span></a>
     </div>
     <div class="media-body" style="margin-left: 100px">

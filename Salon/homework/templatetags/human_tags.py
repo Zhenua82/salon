@@ -16,5 +16,5 @@ def show_professions(arg1='Перечень оказываемых', arg2='ус�
     professions = cache.get('professions')
     if not professions:
         professions = Profession.objects.annotate(cnt=Count('human', filter=F('human__is_published'))).filter(cnt__gt=0)
-        cache.set('professions', professions, 30)
+        cache.set('professions', professions, 1)
     return {'professions': professions, 'arg1': arg1, 'arg2': arg2}

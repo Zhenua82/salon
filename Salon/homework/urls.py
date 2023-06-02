@@ -13,7 +13,7 @@ urlpatterns = [
     path('home/<int:pk>/', human_1.as_view(), name='Human_1'),
     path('add_human/', add_human.as_view(), name='Add_human'),
     # path('home/', home, name='Home'),
-    path('', cache_page(30)(home), name='Home'),
+    path('', cache_page(1)(home), name='Home'),
 
     path('register', register, name='Register'),
     path('login', user_login, name='Login'),

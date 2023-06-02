@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand">Страница людей</a>
+    <div class="container-fluid" style="background: #004d00; color: white;">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,22 +7,40 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Главная</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'Home' %}" style="color: white;">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Add_human' %}">Добавить человека</a>
+                    <a class="nav-link" href="{% url 'Add_human' %}" style="color: white;">Добавить человека</a>
                 </li>
                  {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                    <a class="nav-link" href="{% url 'admin:index' %}" style="color: white;">Admin</a>
                 </li>
                 {% endif %}
+
+                {% for i in human_2 %}
+                {% if i.id == 42 %}
+                <span class="badge" style='background-color: white; margin-left: 510px;'>
+                <img src="{{i.photo.url}}" class="mr-3" width="26" alt="Photo">
+                </span>
+                {% endif %}
+                {% endfor %}
+                 <li class="nav-item">
+                  <a style="margin-left: 10px; font-size: 20pt; color: white;">Стрижки и маникюр</a>
+                </li>
+                {% for i in human_2 %}
+                {% if i.id == 35 %}
+                <span class="badge" style='background-color: white; margin-left: 10px;'>
+                <img src="{{i.photo.url}}" class="mr-3" width="35" alt="Photo">
+                </span>
+                {% endif %}
+                {% endfor %}
             </ul>
         </div>
     </div>
-    <span class="navbar-text" style="margin-right: 60px; width: 250px; display: flex;">
+    <span class="navbar-text" style="margin-right: 60px; width: 250px; display: flex; background: #004d00; color: white;">
         {% if request.user.is_authenticated %}
-        <a style="color: blue; padding-right: 10px"> Привет, {{ user.username|title }}! </a> | <a href="{% url 'Logout' %}" style="color: red; padding-left: 10px">Выйти</a>
+        <a style="color: white; padding-right: 10px"> Привет, {{ user.username|title }}! </a> | <a href="{% url 'Logout' %}" style="color: red; padding-left: 10px">Выйти</a>
         {% else %}
         <a href="{% url 'Register' %}" style="padding-right: 5px">Регистрация</a>  |  <a href="{% url 'Login' %}" style="padding-left: 5px">Логин</a>
         {% endif %}
