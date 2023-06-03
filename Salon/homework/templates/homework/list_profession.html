@@ -9,17 +9,18 @@
 </div>
 {% endcomment %}
 
-{{ arg1 }} {{ arg2 }}
+<h2>{{ arg1 }} {{ arg2 }}</h2>
 {% for prof in professions %}
-
-<div class="media" style="display: flex;">
+{% autoescape off %}
+<div class="media">
     <div class="media-list-group">
         <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action"
-           style='background-color: #c8ecca'>{{ prof.title }}
-            <span class="badge bg-primary rounded-pill" style="width:30px; color:white;">{{ prof.cnt }}</span></a>
+           style='background-color: #c8ecca; font-size: 26pt; color: #cc0066;'>{{ prof.title }}:
+            <span class="badge rounded-pill" style="width:50px; color:#c8ecca; background-color: #c8ecca;">{{ prof.cnt }}</span></a>
     </div>
-    <div class="media-body" style="margin-left: 100px">
+    <div class="media-body" style="margin-left: 20px">
         <h5 class="card-title">{{ prof.price }}</h5>
     </div>
 </div>
+{% endautoescape %}
 {% endfor %}

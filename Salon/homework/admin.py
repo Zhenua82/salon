@@ -28,10 +28,17 @@ class HumanAdmin(admin.ModelAdmin):
             return 'Фото нет'
 
     get_photo_description = 'Миниатюра'
+
+class ProfAdminForm(forms.ModelForm):
+    price = forms.CharField(label='Цена', widget=CKEditorUploadingWidget())
+    class Meta:
+        model = Profession
+        fields = '__all__'
 class ProfessionAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'price')
     list_display_links = ('id', 'title', 'price')
     search_fields = ['title']
+    form = ProfAdminForm
 
 
 admin.site.register(Human, HumanAdmin)

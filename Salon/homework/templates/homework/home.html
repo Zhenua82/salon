@@ -9,7 +9,7 @@
 <div class="media" style="display: flex">
         <div class="media" style="margin-left: 0px; margin-top: 20px; margin-left: 20px">
             {% for i in human_2 %}
-            {% if i.id == 37 %}
+            {% if i.id == 43 %}
             <img src="{{i.photo.url}}" class="mr-3" width="660" height="420" alt="Photo">
             {% endif %}
             {% endfor %}
@@ -39,7 +39,7 @@
             </div>
             {% for i in human_2 %}
             {% if i.id == 31 %}
-            <span class="badge rounded-pill" style='background-color: #cc0066; margin-left: 230px;'>
+            <span class="badge rounded-pill" style='background-color: #cc0066; margin-left: 250px;'>
             <img src="{{i.photo.url}}" class="mr-3" width="90" alt="Photo">
             </span>
             {% endif %}
@@ -77,7 +77,7 @@
                 </div>
                 <div class="media-body" style="margin-left: 20px">
                     {% autoescape off %}
-                    <h5 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}">{{i.Name}}</h5>
+                    <h2 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}">{{i.Name}}</h2>
                     <p class="card-text">Телефон: {{i.age}} </p>
                     <p class="card-text ">
                         {% if i.biography %}
@@ -85,7 +85,6 @@
                     {% else %}
                     <h6> Специализация: нет </h6>
                     {% endif %}
-                    <!--                            Биография: {{i.biography|truncatewords:60|default_if_none:"nothing"}}</p>-->
                     {% endautoescape %}
                     <a href="{{i.get_absolute_url }}" class="btn btn-primary">Read more...</a>
                 </div>

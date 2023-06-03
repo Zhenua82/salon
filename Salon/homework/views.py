@@ -11,7 +11,7 @@ def home(request):
     human = Human.objects.filter(is_published=True)
     human_2 = Human.objects.all()
     professions = Profession.objects.all()
-    paginator = Paginator(human, 3)
+    paginator = Paginator(human, 10)
     page_num = request.GET.get('page', 1)
     page_human = paginator.get_page(page_num)
     context = {
@@ -27,7 +27,7 @@ class get_profession(ListView):
     template_name = 'homework/home.html'
     context_object_name = 'human'
     allow_empty = True
-    paginate_by = 2
+    paginate_by = 20
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = Profession.objects.get(pk=self.kwargs['profession_id']).title
