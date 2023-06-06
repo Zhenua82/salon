@@ -4,7 +4,6 @@
     Мастер
 {% endblock %}
 
-{% block _nav %}  {% endblock %}
 
 {% block sidebar %}
     {% include 'inc/_sidebarhome.html' %}
@@ -12,8 +11,8 @@
 
 {% block content %}
 <div class="card mb-3" style='background-color: #ebe4ab; width: 1100px'>
-    <div class="card-header {% cycle 'text-primary' 'text-success' 'text-danger' %}">
-        Базовый номер: {{ human_i.id }}
+    <div class="card-header" style='color: blue;'>
+        Визитка:
     </div>
     <div class="media" style="display: flex">
          {% autoescape off %}
@@ -24,18 +23,16 @@
             <h6> Фото нет </h6>
             {% endif %}
         </div>
-        <div class="media-body">
-            <h5 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}">{{human_i.Name}}
-                {{human_i.Last_name}}</h5>
-            <p class="card-text">Возраст: {{human_i.age}} лет</p>
+        <div class="media-body" style="margin-left: 20px; color: #004d00;">
+            <h2 class="card-title">{{human_i.Name}}</h2>
+            <p class="card-text">Телефон: {{human_i.age}}</p>
             <p class="card-text ">
                 {% if human_i.biography %}
-            <h6> Биография: </h6>{{human_i.biography}}</p>
+            <h6> Специализация: </h6>{{human_i.biography}}</p>
             {% else %}
-            <h6> Биография: нет </h6>
+            <h6> Специализация: нет </h6>
             {% endif %}
-            <!--                            Биография: {{i.biography|truncatewords:60|default_if_none:"nothing"}}</p>-->
-             {% endautoescape %}
+
         </div>
     </div>
 
@@ -43,7 +40,11 @@
         Профессия: <a href="{{human_i.profession.get_absolute_url }}"> {{human_i.profession.title}} </a>
     </div>
 </div>
-
+<div class="card-header" style='color: blue;'>
+    <h5 style='color: blue; margin-left: 480px;'> Портфолио: </h5>
+    <p class="card-text"> {{human_i.Last_name}}</p>
+</div>
+{% endautoescape %}
 {% endblock %}
 
 

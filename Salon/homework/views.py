@@ -31,6 +31,7 @@ class get_profession(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = Profession.objects.get(pk=self.kwargs['profession_id']).title
+        context['human_2'] = Human.objects.all()
         return context
 
     def get_queryset(self):
@@ -40,6 +41,10 @@ class human_1(DetailView):
     model = Human
     context_object_name = 'human_i'
     template_name = 'homework/human_1.html'
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['human_2'] = Human.objects.all()
+        return context
 
 class add_human(LoginRequiredMixin, CreateView):
     form_class = HumanForm
