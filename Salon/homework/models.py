@@ -28,4 +28,16 @@ class Profession(models.Model):
         verbose_name_plural = 'Профессии'
         ordering = ['id']
 
+class Review(models.Model):
+    title = models.TextField(blank=True, verbose_name='Заголовок')
+    text = models.TextField(blank=True, verbose_name='Текст отзыва')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
+
+    def get_absolute_url(self):
+        return reverse_lazy('Review', kwargs={'pk': self.pk})
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
+        ordering = ['id']
 

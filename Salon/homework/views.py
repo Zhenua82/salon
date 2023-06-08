@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
-from .models import Human, Profession
-from .forms import HumanForm, UserRegisterForm, UserLoginForm
+from .models import Human, Profession, Review
+from .forms import HumanForm, UserRegisterForm, UserLoginForm, ReviewForm
 from django.contrib import messages
 from django.contrib.auth import login, logout
 
@@ -47,11 +47,19 @@ class human_1(DetailView):
         return context
 
 class add_human(LoginRequiredMixin, CreateView):
-    form_class = HumanForm
+    # form_class = HumanForm
+    # template_name = 'homework/add_human.html'
+    # login_url = '/admin/'
+    form_class = ReviewForm
     template_name = 'homework/add_human.html'
     login_url = '/admin/'
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['human_2'] = Human.objects.all()
+        return context
 
 def register(request):
+    human_2 = Human.objects.all()
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -63,9 +71,10 @@ def register(request):
             messages.error(request, 'Ошибка регистрации')
     else:
         form = UserRegisterForm()
-    return render(request, 'homework/register.html', {'form': form})
+    return render(request, 'homework/register.html', {'form': form, 'human_2': human_2})
 
 def user_login(request):
+    human_2 = Human.objects.all()
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
@@ -74,7 +83,7 @@ def user_login(request):
             return redirect('Home')
     else:
         form = UserLoginForm()
-    return render(request, 'homework/login.html', {'form': form})
+    return render(request, 'homework/login.html', {'form': form, 'human_2': human_2})
 
 def user_logout(request):
     logout(request)

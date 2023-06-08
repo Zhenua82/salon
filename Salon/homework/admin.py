@@ -3,7 +3,23 @@ from django.utils.safestring import mark_safe
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from .models import Human, Profession
+from .models import Human, Profession, Review
+
+
+class ReviewAdminForm(forms.ModelForm):
+    text = forms.CharField(label='Текст', widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Review
+        fields = '__all__'
+
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'text', 'created_at', 'updated_at')
+    list_display_links = ('id', 'title', 'text')
+    search_fields = ('title', 'created_at')
+    fields = ('title', 'text')
+    form = ReviewAdminForm
+
 
 class NewsAdminForm(forms.ModelForm):
     biography = forms.CharField(label='Специализация', widget=CKEditorUploadingWidget())
@@ -43,4 +59,6 @@ class ProfessionAdmin(admin.ModelAdmin):
 
 admin.site.register(Human, HumanAdmin)
 admin.site.register(Profession, ProfessionAdmin)
+admin.site.register(Review, ReviewAdmin)
+
 

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Human, Profession
+from .models import Human, Profession, Review
 import re
 from django.core.exceptions import ValidationError
 from captcha.fields import CaptchaField
@@ -61,4 +61,21 @@ class UserLoginForm(AuthenticationForm):
     username = forms.CharField(label='Имя пользователя', help_text='Максимум 150 символов',
                                widget=forms.TextInput(attrs={'class': 'form-control'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+
+
+class ReviewForm(forms.ModelForm):
+    captcha = CaptchaField()
+
+    class Meta:
+        model = Review
+        # fields = '__all__'
+        fields = ['title', 'text']
+        widgets = {
+            'title': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'text': forms.TextInput(attrs={
+                'class': 'form-control'
+            })
+        }
 
