@@ -46,6 +46,14 @@ class human_1(DetailView):
         context['human_2'] = Human.objects.all()
         return context
 
+class review(ListView):
+    model = Review
+    context_object_name = 'review'
+    template_name = 'homework/review.html'
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['human_2'] = Human.objects.all()
+        return context
 class add_human(LoginRequiredMixin, CreateView):
     # form_class = HumanForm
     # template_name = 'homework/add_human.html'

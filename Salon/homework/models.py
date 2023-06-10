@@ -35,7 +35,7 @@ class Review(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
 
     def get_absolute_url(self):
-        return reverse_lazy('Review', kwargs={'pk': self.pk})
+        return reverse_lazy('Review')
     class Meta:
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'

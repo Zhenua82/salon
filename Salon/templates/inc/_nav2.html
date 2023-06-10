@@ -10,17 +10,17 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'Home' %}" style="color: white;">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Add_human' %}" style="color: white;">Добавить человека</a>
+                    <a class="nav-link" href="{% url 'Add_human' %}" style="color: white;">Добавить отзыв</a>
                 </li>
-                 {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}" style="color: white;">Admin</a>
-                </li>
-                {% endif %}
+<!--                 {% if request.user.is_authenticated %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="{% url 'admin:index' %}" style="color: white;">Admin</a>-->
+<!--                </li>-->
+<!--                {% endif %}-->
 
                 {% for i in human_2 %}
                 {% if i.id == 42 %}
-                <span class="badge" style='background-color: white; margin-left: 510px;'>
+                <span class="badge" style='background-color: white; margin-left: 600px;'>
                 <img src="{{i.photo.url}}" class="mr-3" width="25" alt="Photo">
                 </span>
                 {% endif %}
@@ -38,11 +38,12 @@
             </ul>
         </div>
     </div>
-    <span class="navbar-text" style="margin-right: 60px; width: 250px; display: flex; background: #004d00; color: white;">
+    <span class="navbar-text" style="margin-right: 60px; width: 300px; display: flex; background: #004d00; color: white;">
         {% if request.user.is_authenticated %}
+            <a class="nav-link" href="{% url 'admin:index' %}" style="color: white; padding-right: 10px">Admin:</a>
         <a style="color: white; padding-right: 10px"> Привет, {{ user.username|title }}! </a> | <a href="{% url 'Logout' %}" style="color: red; padding-left: 10px">Выйти</a>
         {% else %}
-        <a href="{% url 'Register' %}" style="padding-right: 5px">Регистрация</a>  |  <a href="{% url 'Login' %}" style="padding-left: 5px">Логин</a>
+        <a href="{% url 'Register' %}" style="padding-right: 5px; color: white;">Регистрация</a>  |  <a href="{% url 'Login' %}" style="padding-left: 5px; color: white;">Логин</a>
         {% endif %}
 
     </span>

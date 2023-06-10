@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.decorators.cache import cache_page
 
-from homework.views import home, get_profession, human_1, add_human, register, user_login, user_logout
+from homework.views import home, get_profession, human_1, add_human, register, user_login, user_logout, review
 
 urlpatterns = [
     # path('profession/<int:profession_id>/', get_profession, name='Profession'),
@@ -18,5 +18,6 @@ urlpatterns = [
     path('register', register, name='Register'),
     path('login', user_login, name='Login'),
     path('logout/', user_logout, name='Logout'),
+    path('review', review.as_view(), name='Review'),
 
 ]
