@@ -10,13 +10,8 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'Home' %}" style="color: white;">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Add_human' %}" style="color: white;">Добавить отзыв</a>
+                    <a class="nav-link" href="{% url 'Add_review' %}" style="color: white;">Добавить отзыв</a>
                 </li>
-<!--                 {% if request.user.is_authenticated %}-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="{% url 'admin:index' %}" style="color: white;">Admin</a>-->
-<!--                </li>-->
-<!--                {% endif %}-->
 
                 {% for i in human_2 %}
                 {% if i.id == 42 %}

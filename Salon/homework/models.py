@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse_lazy
 
+
 class Human(models.Model):
     Name = models.CharField(max_length=150, verbose_name='Имя')
     Last_name = models.TextField(blank=True, verbose_name='Портфолио')
@@ -29,10 +30,12 @@ class Profession(models.Model):
         ordering = ['id']
 
 class Review(models.Model):
-    title = models.TextField(blank=True, verbose_name='Заголовок')
-    text = models.TextField(blank=True, verbose_name='Текст отзыва')
+    title = models.TextField(blank=True, verbose_name='Эл. ящик или телефон для обратной связи')
+    text = models.TextField(blank=False, verbose_name='Текст отзыва')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
+    author = models.TextField(blank=False, verbose_name='Автор')
+
 
     def get_absolute_url(self):
         return reverse_lazy('Review')

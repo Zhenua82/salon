@@ -12,7 +12,7 @@
 
 {% block content %}
     <h1>Добавление отзыва</h1>
-    <form action="{% url 'Add_human' %}" method="post">
+    <form action="{% url 'Add_review' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary btn-block">Добавить</button>

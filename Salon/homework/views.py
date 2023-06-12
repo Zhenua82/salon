@@ -7,6 +7,7 @@ from .forms import HumanForm, UserRegisterForm, UserLoginForm, ReviewForm
 from django.contrib import messages
 from django.contrib.auth import login, logout
 
+
 def home(request):
     human = Human.objects.filter(is_published=True)
     human_2 = Human.objects.all()
@@ -54,12 +55,9 @@ class review(ListView):
         context = super().get_context_data(**kwargs)
         context['human_2'] = Human.objects.all()
         return context
-class add_human(LoginRequiredMixin, CreateView):
-    # form_class = HumanForm
-    # template_name = 'homework/add_human.html'
-    # login_url = '/admin/'
+class add_review(LoginRequiredMixin, CreateView):
     form_class = ReviewForm
-    template_name = 'homework/add_human.html'
+    template_name = 'homework/add_review.html'
     login_url = '/admin/'
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -64,17 +64,20 @@ class UserLoginForm(AuthenticationForm):
 
 
 class ReviewForm(forms.ModelForm):
-    # captcha = CaptchaField()
+    captcha = CaptchaField()
 
     class Meta:
         model = Review
         # fields = '__all__'
-        fields = ['title', 'text']
+        fields = ['author', 'title', 'text']
         widgets = {
+            'author': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
             'title': forms.TextInput(attrs={
                 'class': 'form-control'
             }),
-            'text': forms.TextInput(attrs={
+            'text': forms.Textarea(attrs={
                 'class': 'form-control'
             })
         }

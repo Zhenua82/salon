@@ -14,11 +14,16 @@ class ReviewAdminForm(forms.ModelForm):
         fields = '__all__'
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'text', 'created_at', 'updated_at')
+    list_display = ('id', 'title', 'text', 'created_at', 'updated_at', 'author')
     list_display_links = ('id', 'title', 'text')
     search_fields = ('title', 'created_at')
-    fields = ('title', 'text')
+    fields = ('title', 'text', 'author')
     form = ReviewAdminForm
+
+    # def save_model(self, request, obj, form, change):
+    #     obj.author = request.user.username
+    #     obj.save()
+
 
 
 class NewsAdminForm(forms.ModelForm):
