@@ -1,0 +1,5 @@
+**/__pycache__/
+Salon/django_cache/
+venv/
+Salon/db.sqlite3/
+Salon/*.sqlite3/
