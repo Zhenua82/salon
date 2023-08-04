@@ -10,7 +10,7 @@ urlpatterns = [
     path('', include('homework.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('captcha/', include('captcha.urls')),
-    # path('reg/', include('reg.urls')),
+    path('reg/', include('reg.urls')),
 
 ]
 

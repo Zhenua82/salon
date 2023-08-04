@@ -3,3 +3,10 @@ Salon/django_cache/
 venv/
 Salon/db.sqlite3/
 Salon/*.sqlite3/
+
+# Text backup files
+*.bak
+Salon/*.bak
+
+#Database
+*.sqlite3
