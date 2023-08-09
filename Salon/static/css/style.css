@@ -1,0 +1,12 @@
+body {
+background-color: red;
+}
+.errorlist{
+    color: blue;
+}
+
+/* -----------------Адаптация----------*/
+
+@media(min-width: 0px) and (max-width: 320px) {
+    .media {width: 300px}
+}

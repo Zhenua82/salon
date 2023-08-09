@@ -5,16 +5,16 @@
 {% endblock %}
 
 {% block _contact %}
-<div class="media" style="display: flex">
-        <div class="media" style="margin-left: 0px; margin-top: 20px; margin-left: 20px">
+<a href="http://strizhkianapa.ru/">Версия сайта для ПК</a>
+        <div class="media1" style="margin-left: 0px; margin-top: 20px; margin-left: 20px">
             {% for i in human_2 %}
             {% if i.id == 43 %}
-            <img src="{{i.photo.url}}" class="mr-3" width="660" height="420" alt="Photo">
+            <img src="{{i.photo.url}}" class="mr-30" width="560" height="420" alt="Photo">
             {% endif %}
             {% endfor %}
 
         </div>
-        <div class="media-body" style="margin-left: 20px">
+        <div class="media-body1" style="margin-left: 20px">
             <h1 style='background-color: #004d00; margin-top: 20px; color: white'> &#9986; &nbsp; &nbsp; &nbsp; &nbsp; Наши контакты: &nbsp; &nbsp;  &nbsp; &nbsp; &#9986;</h1>
             <a href="tel:+79186436058" style='color: #004d00; text-align: center'><h5> +7(918)-643-60-58 </h5> </a>
             <div class="cont" style='color: #004d00; text-align: center'> <h8> (мужские стрижки) </h8></div>
@@ -38,18 +38,17 @@
             </div>
             {% for i in human_2 %}
             {% if i.id == 31 %}
-            <span class="badge rounded-pill" style='background-color: #cc0066; margin-left: 250px;'>
-            <img src="{{i.photo.url}}" class="mr-3" width="90" alt="Photo">
+            <span class="badge rounded-pill" style='background-color: #cc0066;'>
+            <img src="{{i.photo.url}}" class="mr-31" width="90" alt="Photo">
             </span>
             {% endif %}
             {% endfor %}
             <h1 style='background-color: #004d00; margin-top: 5px; color: white;'>&#9986; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Наш адрес: &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#x2702;</h1>
             <h5 style='color: #004d00; text-align: center'>г. Анапа, ул Ленина, д.195, 3 подъезд, цоколь (вход со двора) </h5>
         </div>
-        <div class="media" style="margin-left: 20px">
+        <div class="media2" style="margin-left: 20px">
             <iframe src="https://www.google.com/maps/d/embed?mid=11oYve_Th26AQAqjRHuipZvm08REVax0&ehbc=2E312F" width="550" height="420" style="margin-top: 20px;"></iframe>
         </div>
-    </div>
     {% endblock %}
 
 {% block sidebar %}
@@ -64,12 +63,12 @@
         {% comment %}
         {% for i in human %}
         {% endcomment %}
-        <div class="card mb-3" style='background-color: #ebe4ab; width: 610px;'>
+        <div class="card mb-3" style='background-color: #ebe4ab;'>
             <h5 class="card-title {% cycle 'text-primary' 'text-success' 'text-danger' %}">Визитка:</h5>
             <div class="media" style="display: flex">
                 <div class="media-photo">
                     {% if i.photo %}
-                    <img src="{{ i.photo.url }}" class="mr-3" width="350" alt="Photo">
+                    <img src="{{ i.photo.url }}" class="mr-3" width="550" alt="Photo">
                     {% else %}
                     <h6> Фото нет </h6>
                     {% endif %}
@@ -95,7 +94,7 @@
         </div>
         {% endfor %}
     </div>
-    <div class="media" style="margin-left: 20px">
+    <div class="media00" style="margin-left: 20px">
         {% for i in human_2 %}
             {% if i.id == 38 %}
             <img src="{{i.photo.url}}" class="mr-3" width="550" height="680" alt="Photo">
