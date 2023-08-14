@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Мастер
+    {{human_i.profession.title}}
 {% endblock %}
 
+{% block description %}
+<meta name="description" content="Салон красоты по адресу: г. Анапа, ул. Ленина, д.195, 3 подъезд, цоколь (вход со двора). Специалист: {{human_i.Name}}, профессия: {{human_i.profession.title}} (Работаем по предварительной записи!)"/>
+{% endblock %}
 
 {% block sidebar %}
     {% include 'inc/_sidebarhome.html' %}

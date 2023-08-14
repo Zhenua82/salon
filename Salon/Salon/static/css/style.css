@@ -9,7 +9,7 @@ background-color: beige;
 html, body {overflow-x: hidden}
 
 @media(min-width: 0px) and (max-width: 320px) {
-    html {zoom: 50%}
+    html {zoom: 44%}
     :root {width: 895px;}
     ::marker {color: #004d00}
     .media1 {width: 860px;}
@@ -32,7 +32,7 @@ html, body {overflow-x: hidden}
 }
 
 @media(min-width: 321px) and (max-width: 480px) {
-    html {zoom: 50%}
+    html {zoom: 44%}
     :root {width: 895px;margin: 0;
     position: absolute;
     left: 0%;

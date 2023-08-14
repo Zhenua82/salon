@@ -18,7 +18,7 @@ def home(request):
     context = {
         'human_2': human_2,
         'human': human,
-        'title': 'Стрижки и маникюр',
+        'title': 'Стрижки и маникюр, парикмахерские услуги и услуги ногтевого сервиса в Анапе',
         'title2': 'Наши мастера:',
         'page_obj': page_human
     }
@@ -31,7 +31,7 @@ class get_profession(ListView):
     paginate_by = 20
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = Profession.objects.get(pk=self.kwargs['profession_id']).title
+        context['title'] = f"Лучший {Profession.objects.get(pk=self.kwargs['profession_id']).title} в Анапе!"
         context['human_2'] = Human.objects.all()
         return context
 
