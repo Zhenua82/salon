@@ -32,6 +32,7 @@ class get_profession(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = f"Лучший {Profession.objects.get(pk=self.kwargs['profession_id']).title} в Анапе!"
+        # context['description'] = f"Салон красоты по адресу: г. Анапа, ул. Ленина, д.195, 3 подъезд, цоколь (вход со двора). Специалисты: {Profession.objects.get(pk=self.kwargs['profession_id']).title} (Работаем по предварительной записи!)"
         context['human_2'] = Human.objects.all()
         return context
 
