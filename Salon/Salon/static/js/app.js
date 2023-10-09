@@ -1,18 +1,52 @@
 
 var i = 0;
+// opacity: 0.9,
+// 'border': 'solid 15px black'
 $( "td:odd img" ).on( "click", function() {
+   $( this ).css({ 'transform': 'translateX(-50%)'});
    $( this ).animate({ height: "200%", width: '200%' }, function() {
       i += 1;
-      $( this ).css({ 'transform': 'translateX(-50%)', 'position': 'relative', 'z-index': i })});
+      $( this ).css({ 'position': 'relative', 'z-index': i })});
+      $( this ).on( "dblclick", function() {
+         $( this ).animate({ height: '100%', width: '100%'}, 1000, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
+      });
 });
+
 $( "td:even img" ).on( "click", function() {
    $( this ).animate({ height: "200%", width: '200%' }, function() {
       i += 1;
       $( this ).css({ 'position': 'relative', 'z-index': i })});
+      $( this ).on( "dblclick", function() {
+         $( this ).animate({ height: '100%', width: '100%'}, 1000, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
+      });
 });
-$( "td img" ).on( "dblclick", function() {
-   $( this ).animate({ height: '100%', width: '100%'}, 1000, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
+
+// $(document).ready(function(){
+//    $( "td:odd img" ).on( "click", function() {
+//       $(this).addClass('xxx');
+//    });
+//    $( document ).on( "click", ".xxx", function() {
+//       $( this ).css({ 'transform': 'translateX(-50%)'});
+//       $( this ).animate({ height: "200%", width: '200%' }, function() {
+//          i += 1;
+//          $( this ).css({ 'position': 'relative', 'z-index': i })});
+//          $( this ).attr('id', 'xxxx');
+//    });
+//    $( document ).on( "dblclick", "#xxxx", function() {
+//       $( this ).animate({ height: '100%', width: '100%'}, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
+//       $(this).removeAttr("xxxx");
+//       $(this).removeClass( 'xxx'); 
+//    });
+// });
+
+
+$( ".list-group-item-action" ).on( "mouseenter", function() {
+   $( this ).css({'color': '#004d00', 'box-shadow': '5px 5px 20px red'} );
 });
+$( ".list-group-item-action" ).on( "mouseleave", function() {
+   $( this ).css({'color': '#cc0066', 'box-shadow': 'none'} );
+});
+
 
 // //Слайдер картинок:
 // var i = 8;
@@ -133,42 +167,3 @@ $(function(){
 
 });
 
-
-
-
-
-
-// $(function(){
-//    $('.row:has(.cont1)').hide();
-// });
-
-// var x = document.getElementsByClassName('x');
-// var popu = document.getElementsByClassName('popu');
-// var btn = document.getElementsByClassName('hed');
-
-// function openPopu() {
-//     popu.style.display = 'block';
-// }
-
-// function closePopu() {
-//     popu.style.display = 'none';
-// }
-
-// x.addEventListener('click', closePopu);
-// btn.addEventListener('click', openPopu);
-
-
-// $(document).ready(function(){
-//     $('.popu').hide()
-//    });
-
-// $(document).ready(function(){
-//    $('.x').click(function(){
-//     $('.popu').hide()
-//    });
-// });
-// $(document).ready(function(){
-//     $('.hed').click(function(){
-//      $('.popu').show()
-//     });
-//  });
