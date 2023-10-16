@@ -12,34 +12,36 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'Add_review' %}" style="color: white;">Добавить отзыв</a>
                 </li>
-
-                {% for i in human_2 %}
-                {% if i.id == 42 %}
-                <span class="badge" style='background-color: white; margin-left: 600px;'>
-                <img src="{{i.photo.url}}" class="mr-3" width="25" alt="Photo">
-                </span>
-                {% endif %}
-                {% endfor %}
-                 <li class="nav-item">
-                  <a style="margin-left: 10px; font-size: 20pt; color: white;">Стрижки и маникюр</a>
-                </li>
-                {% for i in human_2 %}
-                {% if i.id == 35 %}
-                <span class="badge" style='background-color: white; margin-left: 10px;'>
-                <img src="{{i.photo.url}}" class="mr-3" width="35" alt="Photo">
-                </span>
-                {% endif %}
-                {% endfor %}
             </ul>
         </div>
+        <div class="logotip">
+            {% for i in human_2 %}
+            {% if i.id == 42 %}
+            <span class="badge" style='background-color: white;'>
+            <img src="{{i.photo.url}}" class="mr-3" width="25" alt="Photo">
+            </span>
+            {% endif %}
+            {% endfor %}
+            <div class="nav-item">
+                <a style="margin-left: 10px; font-size: 20pt; color: white;">Стрижки и маникюр</a>
+            </div>
+            {% for i in human_2 %}
+            {% if i.id == 35 %}
+            <span class="badge" style='background-color: white; margin-left: 10px;'>
+            <img src="{{i.photo.url}}" class="mr-3" width="35" alt="Photo">
+            </span>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    <span class="navbar-text" style="margin-right: 60px; width: 300px; display: flex; background: #004d00; color: white;">
-        {% if request.user.is_authenticated %}
-            <a class="nav-link" href="{% url 'admin:index' %}" style="color: white; padding-right: 10px">Admin:</a>
-        <a style="color: white; padding-right: 10px"> Привет, {{ user.username|title }}! </a> | <a href="{% url 'Logout' %}" style="color: red; padding-left: 10px">Выйти</a>
-        {% else %}
-        <a href="{% url 'Register' %}" style="padding-right: 5px; color: white;">Регистрация</a>  |  <a href="{% url 'Login' %}" style="padding-left: 5px; color: white;">Логин</a>
-        {% endif %}
-
-    </span>
+    <div class="tail">
+        <span class="navbar-text" style="width: 300px; display: flex; background: #004d00; color: white;">
+            {% if request.user.is_authenticated %}
+                <a class="nav-link" href="{% url 'admin:index' %}" style="color: white; padding-right: 10px">Admin:</a>
+            <a style="color: white; padding-right: 10px"> Привет, {{ user.username|title }}! </a> | <a href="{% url 'Logout' %}" style="color: red; padding-left: 10px">Выйти</a>
+            {% else %}
+            <a href="{% url 'Register' %}" style="padding-right: 5px; color: white;">Регистрация</a>  |  <a href="{% url 'Login' %}" style="padding-left: 5px; color: white;">Логин</a>
+            {% endif %}
+        </span>
+    </div> 
 </nav>

@@ -135,8 +135,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = os.path.join(BASE_DIR, '/media/')
-MEDIA_ROOT = '/media/'
+MEDIA_URL = os.path.join(BASE_DIR, '/sinergia/media/')
+MEDIA_ROOT = '/sinergia/Homework/salon/media/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 

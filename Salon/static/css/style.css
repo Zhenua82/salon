@@ -1,0 +1,20 @@
+body {
+background-color: beige;
+}
+.errorlist{
+    color: blue;
+}
+
+/* -----------------Адаптация----------*/
+html, body {overflow-x: hidden}
+
+@media(min-width: 1500px) {
+    .media-comm {
+        justify-content: center;
+    }
+        h5 {
+            color: red;
+        }
+    /* html {zoom: 44%}
+    :root {width: 895px;} */
+}

@@ -6,27 +6,60 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %} Стрижки и маникюр {% endblock %} </title>
+    <title>{% block title %} Стрижки и маникюр, парикмахерские услуги и услуги ногтевого сервиса в Анапе {% endblock %} </title>
+    {% block description %}
+    <meta name="description" content="Салон красоты по адресу: г. Анапа, ул. Ленина, д.195, 3 подъезд, цоколь (вход со двора). Тел: +7(918)-643-60-58 (Работаем по предварительной записи!)"/>
+    {% endblock %}
     {% comment %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     {% endcomment %}
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
    
 </head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(94493481, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/94493481" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YM5BNHYJN"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-9YM5BNHYJN');
+</script>
+
 <body>
+<a href="http://strizhki-anapa.ru/"><img style=" margin-left: 20px; height: 30px;" src="/D:/sinergia/media/add/mobil.png" alt="картин"> Мобильная версия сайта</a>
+<a href="https://go.2gis.com/kunzo" style="color: #004d00; padding-left: 20px;" ><img style=" margin-right: 2px; height: 20px;" src="https://sun6-22.userapi.com/s/v1/ig2/MSET4G-B461TJ8pO77LuCu-c_djTICioopXzzybaMl8_B9pCq6Sqmqs_-rb6s0QBIJBvmQjIboA21gj_NGUh4ojJ.jpg?size=1088x1088&quality=95&crop=0,0,1088,1088&ava=1" alt="картинка">Отзывы о нас в 2ГИС</a>
+<a href="https://yandex.ru/maps/-/C-AEmqr" style="color: red; padding-left: 20px;" ><img style=" margin-right: 2px; height: 20px;" src="https://soft-list.ru/wp-content/uploads/2021/07/yandex.png" alt="картинка">Отзывы о нас в Яндексе</a>
 
 {% block _contact %}  {% endblock %}
 
-<div class="title" style="margin-left: 880px;">
+<div class="title">
      <h1 style="color: #cc0066;"> {{ title2 }} </h1>
 </div>
-<div class="container mt-3" style="margin-left: 0px;">
-    <div class="row" style="width: 1900px;">
+<div class="container second" style="margin-left: -5px;">
+    <div class="row" style="width: 160%;">
 
         {% cache 1 sidebar %}
-        <div class="col-md-4" style="width: 690px;">
+        <div class="col-md-4" style="width: 28%;">
             {% block sidebar %} SIDEBAR {% endblock %}
         </div>
         {% endcache %}
@@ -44,7 +77,7 @@
             {% endif %}
         {% endfor %}
         {% endif %}
-        <div class="col-md-8" style="width: 1200px;">
+        <div class="col-md-8" style="width: 71%;">
             {% block content %} CONTENT {% endblock %}
         </div>
     </div>
@@ -76,10 +109,12 @@
   </ul>
 </nav>
 {% endif %}
+<script src="{% static 'js/code.jquery.com_jquery-2.2.4.min.js' %}"></script>
 <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"-->
 <!--        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"-->
 <!--        crossorigin="anonymous"></script>-->
 <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/appp.js' %}"></script>
 
 </body>
 </html>

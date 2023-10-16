@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Мастер
+    Анапа {{human_i.profession.title}} {{human_i.Name}}
 {% endblock %}
 
-
+{% block description %}
+<meta name="description" content="Салон красоты по адресу: г. Анапа, ул. Ленина, д.195, 3 подъезд, цоколь (вход со двора). Специалист: {{human_i.Name}}, профессия: {{human_i.profession.title}} (Работаем по предварительной записи!)"/>
+{% endblock %}
 {% block sidebar %}
     {% include 'inc/_sidebarhome.html' %}
 {% endblock %}
 
 {% block content %}
-<div class="card mb-3" style='background-color: #ebe4ab; width: 1100px'>
+<div class="card mb-3" style='background-color: #ebe4ab; width: 60%'>
     <div class="card-header" style='color: blue;'>
         Визитка:
     </div>
@@ -40,11 +42,28 @@
         Профессия: <a href="{{human_i.profession.get_absolute_url }}"> {{human_i.profession.title}} </a>
     </div>
 </div>
-<div class="card-header" style='color: blue;'>
-    <h5 style='color: blue; margin-left: 480px;'> Портфолио: </h5>
+<div class="card-header" style='color: blue; background-color: beige'>
+    <h5 style='color: blue; text-align: center;'> Портфолио: </h5>
     <p class="card-text"> {{human_i.Last_name}}</p>
 </div>
 {% endautoescape %}
+
+<div class="popu">
+    <div class="bubl">
+        <div class="bublcontent">
+            <div class="picter">
+                <!-- <div class="x">
+                    &times; 
+                </div> -->
+                <!-- <div class="img-big">
+                    <img src="" alt="карт">
+                </div> -->
+                <div class="ramka-1"></div>
+            </div>
+        </div>
+        <div class="bubl1"></div>
+        <div class="bubl2"></div>
+        <div class="bubl3"></div>
+    </div>
+</div><!-- /.popu -->
 {% endblock %}
-
-
