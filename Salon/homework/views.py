@@ -9,7 +9,7 @@ from django.contrib.auth import login, logout
 
 
 def home(request):
-    human = Human.objects.filter(is_published=True)
+    human = Human.objects.filter(is_published=True).select_related('profession')
     human_2 = Human.objects.all()
     professions = Profession.objects.all()
     paginator = Paginator(human, 10)

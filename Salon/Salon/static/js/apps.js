@@ -1,43 +1,64 @@
-
-var i = 0;
-// opacity: 0.9,
-// 'border': 'solid 15px black'
-$( "td:odd img" ).on( "click", function() {
-   $( this ).css({ 'transform': 'translateX(-50%)'});
-   $( this ).animate({ height: "200%", width: '200%' }, function() {
-      i += 1;
-      $( this ).css({ 'position': 'relative', 'z-index': i })});
-      $( this ).on( "dblclick", function() {
-         $( this ).animate({ height: '100%', width: '100%'}, 1000, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
-      });
+$(function(){
+   $('.popu').hide();
 });
 
-$( "td:even img" ).on( "click", function() {
-   $( this ).animate({ height: "200%", width: '200%' }, function() {
-      i += 1;
-      $( this ).css({ 'position': 'relative', 'z-index': i })});
-      $( this ).on( "dblclick", function() {
-         $( this ).animate({ height: '100%', width: '100%'}, 1000, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
-      });
+$(function(){
+   $('td img').on("click", function(){
+    $('.popu').show();
+    var m = $(this).attr('src');
+   //  $('.img-big img').attr('src', m)
+   //  console.log('m='+m);
+    $('.ramka-1').css('background-image', 'url( '+ m +')');
+   });
 });
 
-// $(document).ready(function(){
-//    $( "td:odd img" ).on( "click", function() {
-//       $(this).addClass('xxx');
-//    });
-//    $( document ).on( "click", ".xxx", function() {
-//       $( this ).css({ 'transform': 'translateX(-50%)'});
-//       $( this ).animate({ height: "200%", width: '200%' }, function() {
-//          i += 1;
-//          $( this ).css({ 'position': 'relative', 'z-index': i })});
-//          $( this ).attr('id', 'xxxx');
-//    });
-//    $( document ).on( "dblclick", "#xxxx", function() {
-//       $( this ).animate({ height: '100%', width: '100%'}, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
-//       $(this).removeAttr("xxxx");
-//       $(this).removeClass( 'xxx'); 
-//    });
+$(function(){
+   $('.ramka-1').on( "click", function() {
+      $('.popu').hide();
+   });
+});
+
+
+
+// var i = 0;
+// // opacity: 0.9,
+// // 'border': 'solid 15px black'
+// $( "td:odd img" ).on( "click", function() {
+//    $( this ).css({ 'transform': 'translateX(-50%)'});
+//    $( this ).animate({ height: "200%", width: '200%' }, function() {
+//       i += 1;
+//       $( this ).css({ 'position': 'relative', 'z-index': i })});
+//       $( this ).on( "dblclick", function() {
+//          $( this ).animate({ height: '100%', width: '100%'}, 1000, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
+//       });
 // });
+
+// $( "td:even img" ).on( "click", function() {
+//    $( this ).animate({ height: "200%", width: '200%' }, function() {
+//       i += 1;
+//       $( this ).css({ 'position': 'relative', 'z-index': i })});
+//       $( this ).on( "dblclick", function() {
+//          $( this ).animate({ height: '100%', width: '100%'}, 1000, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
+//       });
+// });
+
+// // $(document).ready(function(){
+// //    $( "td:odd img" ).on( "click", function() {
+// //       $(this).addClass('xxx');
+// //    });
+// //    $( document ).on( "click", ".xxx", function() {
+// //       $( this ).css({ 'transform': 'translateX(-50%)'});
+// //       $( this ).animate({ height: "200%", width: '200%' }, function() {
+// //          i += 1;
+// //          $( this ).css({ 'position': 'relative', 'z-index': i })});
+// //          $( this ).attr('id', 'xxxx');
+// //    });
+// //    $( document ).on( "dblclick", "#xxxx", function() {
+// //       $( this ).animate({ height: '100%', width: '100%'}, function() {$( this ).css({ 'transform': 'translateX(0%)'})});
+// //       $(this).removeAttr("xxxx");
+// //       $(this).removeClass( 'xxx'); 
+// //    });
+// // });
 
 
 $( ".list-group-item-action" ).on( "mouseenter", function() {
