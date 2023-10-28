@@ -10,11 +10,12 @@
 <a href="https://yandex.ru/maps/-/C-AEmqr" style="color: red; padding-left: 20px;" ><img style=" margin-right: 2px; height: 20px;" src="https://soft-list.ru/wp-content/uploads/2021/07/yandex.png" alt="картинка">Отзывы о нас в Яндексе</a> -->
 <div class="media media-comm" style="display: flex">
         <div class="media" style="margin-left: 0px; margin-top: 20px; margin-left: 20px; width: 33%;">
-            {% for i in human_2 %}
-            {% if i.id == 43 %}
-            <img src="{{i.photo.url}}" class="mr-3" height="420" width="100%"  alt="Photo">
-            {% endif %}
-            {% endfor %}
+            <!-- {% for i in human_2 %}
+            {% if i.id == 43 %} -->
+            <img src="/D:/sinergia/media/add/title/1.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/1.webp';" class="mr-3" height="420" width="100%"  alt="Photo">
+            <!-- <img src="images/dest/fff.webp" alt="картинка" onerror="this.onerror=null; this.src='images/dest/jpg/fff.jpg';"> -->
+            <!-- {% endif %}
+            {% endfor %} -->
 
         </div>
         <div class="media-body" style="margin-left: 20px; width: 33%;">
@@ -47,13 +48,13 @@
             <div class="list">
                     <h5 style='color: #004d00; text-align: center'> Работаем по предворительной записи </h5>
             </div>
-            {% for i in human_2 %}
-            {% if i.id == 31 %}
+            <!-- {% for i in human_2 %}
+            {% if i.id == 31 %} -->
             <span class="badge rounded-pill" style='background-color: #cc0066;'>
-            <img src="{{i.photo.url}}" class="mr-3" width="90" alt="Photo">
+                <img src="/D:/sinergia/media/add/title/scizion.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/scizion.webp';" class="mr-3" width="90" alt="Photo">
             </span>
-            {% endif %}
-            {% endfor %}
+            <!-- {% endif %}
+            {% endfor %} -->
             <div class="head">
                 <div class="scissors">
                     <h1>&#9986;</h1>
@@ -116,15 +117,15 @@
         {% endfor %}
     </div>
     <div class="media" style="margin-left: 20px; width: 60%">
-        {% for i in human_2 %}
-            {% if i.id == 38 %}
-            <img src="{{i.photo.url}}" class="mr-3" width="80%" height="790" alt="Photo">
-          {% endif %}
-            {% if i.id == 41 %}
-            <img src="{{i.photo.url}}" class="mr-3" width="80%" height="790" alt="Photo" style="margin-top: 20px;">
-            {% endif %}
+        <!-- {% for i in human_2 %}
+            {% if i.id == 38 %} -->
+            <img src="/D:/sinergia/media/add/title/intr1.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/intr1.webp';" class="mr-3" width="80%" height="790" alt="Photo">
+          <!-- {% endif %}
+            {% if i.id == 41 %} -->
+            <img src="/D:/sinergia/media/add/title/intr2.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/intr2.webp';" class="mr-3" width="80%" height="790" alt="Photo" style="margin-top: 20px;">
+            <!-- {% endif %}
 
-            {% endfor %}
+            {% endfor %} -->
     </div>
 </div>
 {% endblock %}
