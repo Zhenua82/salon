@@ -1,4 +1,21 @@
 
+$(document).ready(function() {
+   $('.boxx').attr('class', 'boxx i_animat');
+   // Инициализируем Waypoints для .box
+   $('.boxx').waypoint(function(direction) {
+      // $('.boxx').addClass('i_animat')
+     if (direction === 'down') {
+       // Если пользователь скроллит вниз, добавляем класс 'animated' для анимации
+       $(this.element).removeClass('i_animat');
+     } else {
+       // Если пользователь скроллит вверх, удаляем класс 'animated'
+       $(this.element).addClass('i_animat');
+     }
+   }, {
+     offset: '-5%' // Срабатывать при достижении середины экрана
+   });
+ });
+
 $(function(){
    $('.popu').hide();
 });

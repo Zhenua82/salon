@@ -10,6 +10,67 @@ background-color: beige;
     text-align: center;
 }
 
+.i_anim {
+    display: flex;
+}
+.i_animat{
+    margin-left: 15px;
+    margin-right: 15px;
+    animation-name: newspaper, hinges,  hinge;
+    animation-duration: 5s, 5s, 5s;
+    animation-delay: 0s, 2s, 8s;
+}
+
+.boxx{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+ @keyframes hinges{
+    10%{
+     transform: rotate(140deg);
+   }
+   25%{
+     transform: rotate(-30deg);
+   }
+   35%{
+     transform: rotate(110deg);
+   }
+   45%{
+     transform: rotate(-20deg);
+   }
+   55%{
+     transform: rotate(80deg);
+   }
+   65%{
+     transform: rotate(-15deg);
+   }
+     75%{
+     transform: rotate(50deg);
+   }
+     85%{
+     transform: rotate(-10deg);
+   }
+     95%{
+     transform: rotate(30deg);
+   }
+   100%{
+    transform: rotate(0deg);
+  }
+ }
+    
+@-webkit-keyframes newspaper {
+    0%{ opacity: 1; -webkit-transform: scale3d(0.3, 0.3, 0.3) rotate(-720deg); transform: scale3d(0.3, 0.3, 0.3) rotate(720deg); }
+    30%{ opacity: 1; -webkit-transform: scale3d(1,1,1) rotate(15deg); transform: scale3d(1,1,1) rotate(15deg); }
+    100%{ opacity: 1; -webkit-transform: scale3d(1,1,1) rotate(15deg); transform: scale3d(1,1,1) rotate(15deg); }
+    }
+@keyframes newspaper {
+    0%{ opacity: 1; transform: scale3d(0.3, 0.3, 0.3) rotate(-720deg); }
+    30%{ opacity: 1; transform: scale3d(1,1,1) rotate(15deg); }
+    100%{ opacity: 1; transform: scale3d(1,1,1) rotate(15deg); }
+    }
+
+
 /* -----------------Адаптация----------*/
 html, body {overflow-x: hidden}
 
