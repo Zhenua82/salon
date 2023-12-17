@@ -3,7 +3,10 @@
 {% block title %}
     {{ title }}
 {% endblock %}
-
+{% block description %}
+<meta name="description"
+  content="Салон красоты по адресу: г. Анапа, ул. Ленина, д.195, 3 подъезд, цоколь (вход со двора). Тел: +7(918)-643-60-58 (Работаем по предварительной записи!), {{ title2 }}" />
+{% endblock %}
 {% block _contact %}
 <!-- <a href="http://strizhki-anapa.ru/"><img style=" margin-left: 20px; height: 30px;" src="/D:/sinergia/media/add/mobil.png" alt="картин"> Мобильная версия сайта</a>
 <a href="https://go.2gis.com/kunzo" style="color: #004d00; padding-left: 20px;" ><img style=" margin-right: 2px; height: 20px;" src="https://sun6-22.userapi.com/s/v1/ig2/MSET4G-B461TJ8pO77LuCu-c_djTICioopXzzybaMl8_B9pCq6Sqmqs_-rb6s0QBIJBvmQjIboA21gj_NGUh4ojJ.jpg?size=1088x1088&quality=95&crop=0,0,1088,1088&ava=1" alt="картинка">Отзывы о нас в 2ГИС</a>
@@ -12,7 +15,7 @@
         <div class="media" style="margin-left: 0px; margin-top: 20px; margin-left: 20px; width: 33%;">
             <!-- {% for i in human_2 %}
             {% if i.id == 43 %} -->
-            <img src="/D:/sinergia/media/add/title/1.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/1.webp';" class="mr-3" height="420" width="100%"  alt="Photo">
+            <img src="/D:/sinergia/media/add/title/1.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/1.webp';" class="mr-3" height="420" width="100%"  alt="фото салона красоты Стрижки и маникюр">
             <!-- <img src="images/dest/fff.webp" alt="картинка" onerror="this.onerror=null; this.src='images/dest/jpg/fff.jpg';"> -->
             <!-- {% endif %}
             {% endfor %} -->
@@ -21,27 +24,27 @@
         <div class="media-body" style="margin-left: 20px; width: 33%;">
             <div class="head">
                 <div class="scissors">
-                    <h1>&#9986;</h1>
+                    <h2>&#9986;</h2>
                 </div>
-                <h1 style='background-color: #004d00; color: white'> Наши контакты: </h1>
+                <h2 style='background-color: #004d00; color: white; font-size: 2.5rem;'> Наши контакты: </h2>
                 <div class="scissors">
-                    <h1>&#9986;</h1>
+                    <h2>&#9986;</h2>
                 </div>
             </div>
-            <a href="tel:+79186436058" style='color: #004d00; text-align: center'><h5> +7(918)-643-60-58 </h5> </a>
+            <a rel="nofollow" href="tel:+79186436058" style='color: #004d00; text-align: center'><h5> +7(918)-643-60-58 </h5> </a>
             <div class="cont" style='color: #004d00; text-align: center'> <h8> (мужские стрижки) </h8></div>
 <!--            <h8 style='color: blue; text-align: center'> (мужские стрижки) </h8>-->
             <div class="cont" style='color: #cc0066; text-align: center'>
-                <a href="tel:+79186689910" style='color: #cc0066;'><h7> +7(918)-668-99-10 </h7> </a>
+                <a rel="nofollow" href="tel:+79186689910" style='color: #cc0066;'><h7> +7(918)-668-99-10 </h7> </a>
                 или
-                <a href="tel:+79181313946" style='color: #cc0066;'><h7> +7(918)-131-39-46 </h7> </a>
+                <a rel="nofollow" href="tel:+79181313946" style='color: #cc0066;'><h7> +7(918)-131-39-46 </h7> </a>
             </div>
             <div class="cont" style='color: #cc0066; text-align: center'> <h8> (женские стрижки) </h8></div>
 
             <div class="cont" style='color: #004d00; text-align: center'>
-                <a href="tel:+79385014528" style='color: #004d00;'><h7> +7(938)-501-45-28 </h7> </a>
+                <a rel="nofollow" href="tel:+79385014528" style='color: #004d00;'><h7> +7(938)-501-45-28 </h7> </a>
                 или
-                <a href="tel:+79184709841" style='color: #004d00;'><h7> +7(918)-470-98-41 </h7> </a>
+                <a rel="nofollow" href="tel:+79184709841" style='color: #004d00;'><h7> +7(918)-470-98-41 </h7> </a>
             </div>
             <div class="cont" style='color: #004d00; text-align: center'> <h8> (маникюр и педикюр) </h8></div>
 
@@ -57,11 +60,11 @@
             {% endfor %} -->
             <div class="head">
                 <div class="scissors">
-                    <h1>&#9986;</h1>
+                    <h2>&#9986;</h2>
                 </div>
-                <h1 style='background-color: #004d00; color: white'> Наш адрес: </h1>
+                <h1 style='background-color: #004d00; color: white;'> Наш адрес: </h1>
                 <div class="scissors">
-                    <h1>&#9986;</h1>
+                    <h2>&#9986;</h2>
                 </div>
             </div>
             <h5 style='color: #004d00; text-align: center'>г. Анапа, ул Ленина, д.195, 3 подъезд, цоколь (вход со двора) </h5>
@@ -90,7 +93,7 @@
             <div class="media" style="display: flex">
                 <div class="media-photo">
                     {% if i.photo %}
-                    <img src="{{ i.photo.url }}" class="mr-3" width="100%" alt="Photo">
+                    <img src="{{ i.photo.url }}" class="mr-3" width="100%" alt="визитка парикмахера, мастера маникюра и педикюра">
                     {% else %}
                     <h6> Фото нет </h6>
                     {% endif %}
@@ -119,10 +122,10 @@
     <div class="media" style="margin-left: 20px; width: 60%">
         <!-- {% for i in human_2 %}
             {% if i.id == 38 %} -->
-            <img src="/D:/sinergia/media/add/title/intr1.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/intr1.webp';" class="mr-3" width="80%" height="790" alt="Photo">
+            <img src="/D:/sinergia/media/add/title/intr1.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/intr1.webp';" class="mr-3" width="80%" height="790" alt="Фото интерьера парикмахерской">
           <!-- {% endif %}
             {% if i.id == 41 %} -->
-            <img src="/D:/sinergia/media/add/title/intr2.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/intr2.webp';" class="mr-3" width="80%" height="790" alt="Photo" style="margin-top: 20px;">
+            <img src="/D:/sinergia/media/add/title/intr2.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/intr2.webp';" class="mr-3" width="80%" height="790" alt="Фото интерьера салона красоты" style="margin-top: 20px;">
             <!-- {% endif %}
 
             {% endfor %} -->

@@ -32,6 +32,7 @@ class get_profession(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = Profession.objects.get(pk=self.kwargs['profession_id']).title
+        context['title2'] = Profession.objects.get(pk=self.kwargs['profession_id']).title
         context['human_2'] = Human.objects.all()
         return context
 

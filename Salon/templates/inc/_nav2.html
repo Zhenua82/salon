@@ -18,7 +18,7 @@
             <!-- {% for i in human_2 %}
             {% if i.id == 42 %} -->
             <span class="badge" style='background-color: white;'>
-                <img src="/D:/sinergia/media/add/title/women.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/women.webp';" class="mr-3" width="25" alt="Photo">
+                <img src="/D:/sinergia/media/add/title/women.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/women.webp';" class="mr-3" width="25" alt="Женские стрижки">
             </span>
             <!-- {% endif %}
             {% endfor %} -->
@@ -28,7 +28,7 @@
             <!-- {% for i in human_2 %}
             {% if i.id == 35 %} -->
             <span class="badge" style='background-color: white; margin-left: 10px;'>
-                <img src="/D:/sinergia/media/add/title/men.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/men.webp';" class="mr-3" width="35" alt="Photo">
+                <img src="/D:/sinergia/media/add/title/men.avif" onerror="this.onerror=null; this.src='/D:/sinergia/media/add/title/men.webp';" class="mr-3" width="35" alt="Мужские стрижки">
             </span>
             <!-- {% endif %}
             {% endfor %} -->
@@ -37,8 +37,8 @@
     <div class="tail">
         <span class="navbar-text" style="width: 300px; display: flex; background: #004d00; color: white;">
             {% if request.user.is_authenticated %}
-                <a class="nav-link" href="{% url 'admin:index' %}" style="color: white; padding-right: 10px">Admin:</a>
-            <a style="color: white; padding-right: 10px"> Привет, {{ user.username|title }}! </a> | <a href="{% url 'Logout' %}" style="color: red; padding-left: 10px">Выйти</a>
+                <a rel="nofollow" class="nav-link" href="{% url 'admin:index' %}" style="color: white; padding-right: 10px">Admin:</a>
+            <a rel="nofollow" style="color: white; padding-right: 10px"> Привет, {{ user.username|title }}! </a> | <a href="{% url 'Logout' %}" style="color: red; padding-left: 10px">Выйти</a>
             {% else %}
             <a href="{% url 'Register' %}" style="padding-right: 5px; color: white;">Регистрация</a>  |  <a href="{% url 'Login' %}" style="padding-left: 5px; color: white;">Логин</a>
             {% endif %}

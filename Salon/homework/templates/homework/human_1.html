@@ -20,7 +20,7 @@
          {% autoescape off %}
         <div class="media-photo">
             {% if human_i.photo %}
-            <img src="{{ human_i.photo.url }}" class="mr-3" width="350" alt="Photo">
+            <img src="{{ human_i.photo.url }}" class="mr-3" width="350" alt="визитка парикмахера, мастера маникюра и педикюра">
             {% else %}
             <h6> Фото нет </h6>
             {% endif %}
@@ -43,7 +43,7 @@
     </div>
 </div>
 <div class="card-header" style='color: blue; background-color: beige'>
-    <h5 style='color: blue; text-align: center;'> Портфолио: </h5>
+    <h1 style='color: blue; text-align: center;'> Портфолио мастера: </h1>
     <p class="card-text"> {{human_i.Last_name}}</p>
 </div>
 {% endautoescape %}
